@@ -4,7 +4,7 @@
  * Created Date : Sunday, Oct 4th 2020, 10:57:11 PM
  * Author       : Pramod Devireddy
  *
- * Last Modified: Wednesday, 7th October 2020 8:31:15 am
+ * Last Modified: Tuesday, 20th October 2020 9:53:07 pm
  * Modified By  : Pramod Devireddy
  *
  * Copyright (c)2020 - Pramod Devireddy
@@ -38,12 +38,13 @@ type traffic struct {
 
 var rxLogFile, txLogFile *string
 
-func main() {
-
+func init() {
 	rxLogFile = flag.String("rx", "", "Receive Bytes Log File")
 	txLogFile = flag.String("tx", "", "Transmit Bytes Log File")
-	flag.Parse()
+}
 
+func main() {
+	flag.Parse()
 	mux := http.NewServeMux()
 	mux.HandleFunc("/rx_log_data", serveRxLogData)
 	mux.HandleFunc("/tx_log_data", serveTxLogData)
