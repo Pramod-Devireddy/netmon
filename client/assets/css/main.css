@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+body {
+  background-color: #333333 !important;
+}
+
+.header {
+  font-family: "Roboto";
+  font-style: normal;
+  text-decoration: none;
+  outline: none;
+  font-size: 36px;
+  background: -webkit-linear-gradient(rgb(0, 217, 255), #35383f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+
+.wh_footer {
+  font-size: large;
+  font-family: "Roboto";
+  font-weight: bold;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 100%;
+  background: -webkit-linear-gradient(rgb(0, 217, 255), #2b2d33);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wheel {
+  width: 230px;
+  height: 230px;
+  background-color: none;
+  border-radius: 50%;
+  margin: 5vh 30px;
+  position: relative;
+  border-right: 30px solid purple;
+  border-left: 30px solid purple;
+  border-top: 30px solid white;
+  border-bottom: 30px solid white;
+  animation-name: CWspin;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes CWspin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes CCWspin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.wh-speed {
+  color: white;
+  font-family: "Roboto";
+  font-size: large;
+  font-weight: bold;
+  top: 15vh;
+  margin-top: -160px;
+  text-align: center;
+}
+
+.led-On {
+  margin: 5px 20px;
+  width: 18px;
+  height: 18px;
+  background-color: #b1ff14;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 1px 1px, inset #304701 0 -1px 1px,
+    #89ff00 0 1px 10px;
+}
+
+.led-Off {
+  margin: 5px 20px;
+  width: 18px;
+  height: 18px;
+  background-color: #ff2945;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 1px 1px, inset #313130 0 -1px 1px,
+    #ff2945 0 1px 10px;
+}
+
+.wh-info {
+  color: white;
+  font-family: "Roboto";
+  font-size: 18px;
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proc-value {
+  width: 120px;
+  margin-left: 20px;
+  text-align: left;
+}

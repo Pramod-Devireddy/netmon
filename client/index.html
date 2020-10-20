@@ -1,0 +1,81 @@
+<!--
+File         : index.html
+Project      : NetMon
+Created Date : Wednesday, Oct 7th 2020, 1:20:14 AM
+Author       : Pramod Devireddy
+
+Last Modified: Wednesday, 7th October 2020 7:14:04 am
+Modified By  : Pramod Devireddy
+
+Copyright (c)2020 - Pramod Devireddy
+************************* Description *************************
+ 
+***************************************************************
+-->
+
+<!DOCTYPE html>
+<html style="overflow: auto">
+
+<head>
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="assets/css/vuetify.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>NetMon</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+</head>
+
+<body>
+    <div id="app">
+        <v-app app style="background-color: #EEEEEE;">
+
+            <v-navigation-drawer app v-model="drawer" class="side-nav" clipped enable-resize-watcher>
+                <v-list>
+                  <v-list-item v-for="item in items" :key="item.title" :to="item.path" link>
+                    <v-list-item-icon>
+                      <v-icon>{{ item.icon }}</v-icon>
+                    </v-list-item-icon>
+        
+                    <v-list-item-content>
+                      <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list>
+              </v-navigation-drawer>
+        
+
+            <v-app-bar clipped-left flat app style="background-color: #EEEEEE;">
+                <v-app-bar-nav-icon @click="drawer = !drawer" class="black--text"></v-app-bar-nav-icon>
+                <v-toolbar-title>
+                    <div class="hw_title">NetMon&nbsp;</div>
+                </v-toolbar-title>
+                <v-spacer></v-spacer>
+            </v-app-bar>
+
+            <v-content>
+                <keep-alive>
+                    <router-view></router-view>
+                  </keep-alive>          
+            </v-content>
+
+            <v-footer app padless style="padding: 10px 0;">
+                <div class="wh_footer d-flex justify-center">
+                    Spacecraft Checkout Group
+                </div>
+            </v-footer>
+        </v-app>
+    </div>
+
+
+    <script src="assets/js/reconnecting-websocket.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/vuetify.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <script src="assets/js/vue-router.js"></script>
+    <script src="assets/js/httpVueLoader.js"></script>  
+    <script src="assets/js/plotly-latest.min.js"></script>  
+    <script src="js/app.js"></script>
+</body>
+
+</html>
